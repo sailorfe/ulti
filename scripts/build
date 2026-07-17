@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+emacs --batch -l ulti-theme.el -f ulti/export-all
