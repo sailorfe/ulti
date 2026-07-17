@@ -1,6 +1,6 @@
 * ulti 🦖👹
 
-[[file:grim.png][ulti emacs]]
+[[file:grim.png]]
 
 an emacs-native syntax highlight theme with automated ports written in pure emacs lisp, inspired by the tobiroppo from /one piece/. currently supports [[https://orgmode.org][org-mode]], [[https://github.com/jrblevin/markdown-mode][markdown-mode]], [[https://magit.vc/][magit]], [[https://github.com/minad/corfu][corfu]], and [[https://github.com/akermu/emacs-libvterm][vterm]]. 
 
@@ -9,25 +9,6 @@ see also:
 + [[https://codeberg.org/sailorfe/perona.nvim][perona.nvim]]
 + [[https://codeberg.org/sailorfe/moonqueen.nvim][moonqueen.nvim]]
 + [[https://codeberg.org/sailorfe/luna.nvim][luna.nvim]]
-
-** palette
-
-+ base: ~#131629~
-+ surface: ~#1a1e37~
-+ overlay: ~#202545~
-+ muted: ~#515884~
-+ faint: ~#999fc0~
-+ text: ~#c7cbe4~
-+ light: ~#e3e5f1~
-+ whoswho: ~#d4615d~
-+ sasaki: ~#c5c95e~
-+ pageone: ~#a892dc~
-+ ulti: ~#f286bc~
-+ drake: ~#5692e5~
-+ blackmaria: ~#84c9e0~
-+ low: ~#1f2132~
-+ med: ~#2e324b~
-+ high: ~#3e4365~
 
 ** installation with ~straight.el~
 
