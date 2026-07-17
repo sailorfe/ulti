@@ -554,7 +554,7 @@ STRIP-HASH optionally removes # from templates that require bare rrggbb."
 (defvar ulti/export-targets
   '(("templates/palette.json" . "palette.json")
     ("templates/ansi.json" . "extras/ansi/ulti.json")
-    ("templates/foot.ini" . "extras/foot/ulti.ini")
+    ("templates/foot.ini" "extras/foot/ulti.ini" t)
     ("templates/mako" . "extras/mako/ulti")
     ("templates/shell.sh" . "extras/shell/ulti.sh")
     ("templates/termux.properties" . "extras/termux/ulti.properties")
