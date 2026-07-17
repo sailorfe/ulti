@@ -12,6 +12,10 @@
 
 (require 'color)
 
+(defvar ulti/theme-dir
+  (file-name-directory (or load-file-name buffer-file-name default-directory))
+  "Directory this file lives in.")
+
 (defun ulti/hsl (h s l)
   "Convert H, S and L to a hex color string."
   (apply #'color-rgb-to-hex
@@ -21,35 +25,79 @@
   "Raise L by DELTA (default 0.1) for a bright/terminal variant; leave H and S alone."
   (ulti/hsl h s (min 1.0 (+ l (or delta 0.1)))))
 
+(defvar ulti/palette
+  (let* ((base (ulti/hsl 232 0.36 0.12))
+         (surface (ulti/hsl 232 0.36 0.16))
+         (overlay (ulti/hsl 232 0.36 0.2))
+         (text (ulti/hsl 232 0.36 0.84))
+         (light (ulti/hsl 232 0.36 0.92))
+         (faint (ulti/hsl 232 0.24 0.68))
+         (muted (ulti/hsl 232 0.24 0.42))
+         (low (ulti/hsl 232 0.24 0.16))
+         (med (ulti/hsl 232 0.24 0.24))
+         (high (ulti/hsl 232 0.24 0.32))
+         (whoswho (ulti/hsl 2   0.58 0.6))  ; red pumps, ANSI red
+         (sabretooth (ulti/bright 2   0.58 0.6))
+         (sasaki (ulti/hsl 62  0.5  0.58)) ; pachycephalos green, ANSI green
+         (triceratops (ulti/bright 62  0.5  0.58))
+         (pageone (ulti/hsl 258 0.52 0.72)) ; page one purple, ANSI "yellow"
+         (spinosaurus (ulti/bright 258 0.52 0.72))
+         (ulti (ulti/hsl 330 0.81 0.74)) ; pink hair, ANSI "blue"
+         (pachycephalos (ulti/bright 330 0.81 0.74))
+         (drake (ulti/hsl 215 0.74 0.62)) ; blue hair, ANSI "magenta"
+         (allosaurus (ulti/bright 215 0.74 0.62))
+         (blackmaria (ulti/hsl 195 0.6  0.7))  ; skirt, ANSI "cyan"
+         (rosamygale (ulti/bright 195 0.6  0.7)))
+
+    `((base . ,base)
+      (surface . ,surface)
+      (overlay . ,overlay)
+      (text . ,text)
+      (light . ,light)
+      (faint . ,faint)
+      (muted . ,muted)
+      (low . ,low)
+      (med . ,med)
+      (high . ,high)
+      (whoswho . ,whoswho)
+      (sabretooth . ,sabretooth)
+      (sasaki . ,sasaki)
+      (triceratops . ,triceratops)
+      (pageone . ,pageone)
+      (spinosaurus . ,spinosaurus)
+      (ulti . ,ulti)
+      (pachycephalos . ,pachycephalos)
+      (drake . ,drake)
+      (allosaurus . ,allosaurus)
+      (blackmaria . ,blackmaria)
+      (rosamygale . ,rosamygale))
+    )
+  )
+
 (deftheme ulti "Tobiroppo theme.")
 
-(let* (; backgrounds
-       (base (ulti/hsl 232 0.36 0.12))
-       (surface (ulti/hsl 232 0.36 0.16))
-       (overlay (ulti/hsl 232 0.36 0.2))
-                                        ; foregrounds
-       (text (ulti/hsl 232 0.36 0.84))
-       (light (ulti/hsl 232 0.36 0.92))
-       (faint (ulti/hsl 232 0.24 0.68))
-       (muted (ulti/hsl 232 0.24 0.42))
-                                        ; contrast highlights
-       (low (ulti/hsl 232 0.24 0.16))
-       (med (ulti/hsl 232 0.24 0.24))
-       (high (ulti/hsl 232 0.24 0.32))
-                                        ; accents
-       (whoswho (ulti/hsl 2 0.58 0.6)) ; red pumps, ANSI red
-       (sabretooth (ulti/bright 2 0.58 0.6))
-       (sasaki (ulti/hsl 62 0.5 0.58)) ; pachy green, ANSI green
-       (triceratops (ulti/bright 62 0.5 0.58))
-       (pageone (ulti/hsl 258 0.52 0.72)) ; page one purple, ANSI "yellow"
-       (spino (ulti/bright 258 0.52 0.72))
-       (ulti (ulti/hsl 330 0.81 0.74)) ; pink hair, ANSI "blue"
-       (pachy (ulti/bright 330 0.81 0.74))
-       (drake (ulti/hsl 215 0.74 0.62)) ; blue hair, ANSI "magenta"
-       (allosaurus (ulti/bright 215 0.74 0.62))
-       (blackmaria (ulti/hsl 195 0.6 0.7)) ; skirt, ANSI "cyan"
-       (rosamygale (ulti/bright 195 0.6 0.7))
-       )
+(let* ((base (alist-get 'base ulti/palette))
+       (surface (alist-get 'surface ulti/palette))
+       (overlay (alist-get 'overlay ulti/palette))
+       (text (alist-get 'text ulti/palette))
+       (light (alist-get 'light ulti/palette))
+       (faint (alist-get 'faint ulti/palette))
+       (muted (alist-get 'muted ulti/palette))
+       (low (alist-get 'low ulti/palette))
+       (med (alist-get 'med ulti/palette))
+       (high (alist-get 'high ulti/palette))
+       (whoswho (alist-get 'whoswho ulti/palette))
+       (sabretooth (alist-get 'sabretooth ulti/palette))
+       (sasaki (alist-get 'sasaki ulti/palette))
+       (triceratops (alist-get 'triceratops ulti/palette))
+       (pageone (alist-get 'pageone ulti/palette))
+       (spinosaurus (alist-get 'spinosaurus ulti/palette))
+       (ulti (alist-get 'ulti ulti/palette))
+       (pachycephalos (alist-get 'pachycephalos ulti/palette))
+       (drake (alist-get 'drake ulti/palette))
+       (allosaurus (alist-get 'allosaurus ulti/palette))
+       (blackmaria (alist-get 'blackmaria ulti/palette))
+       (rosamygale (alist-get 'rosamygale ulti/palette)))
 
   (custom-theme-set-faces
    'ulti
@@ -417,22 +465,6 @@
    `(corfu-annotations ((t (:foreground ,muted :slant italic))))
    `(corfu-deprecated ((t (:foreground ,muted :strike-through t))))
 
-   ;; --- in-buffer completion popups (company) --------------------------
-   `(company-tooltip ((t (:background ,surface :foreground ,text))))
-   `(company-tooltip-selection ((t (:background ,overlay :foreground ,drake :weight bold))))
-   `(company-tooltip-common ((t (:foreground ,drake :weight bold))))
-   `(company-tooltip-common-selection ((t (:foreground ,drake :weight bold :underline t))))
-   `(company-tooltip-annotation ((t (:foreground ,muted :slant italic))))
-   `(company-tooltip-annotation-selection ((t (:foreground ,faint :slant italic))))
-   `(company-tooltip-mouse ((t (:background ,overlay))))
-   `(company-tooltip-search ((t (:background ,med :foreground ,pageone))))
-   `(company-tooltip-search-selection ((t (:background ,med :foreground ,pageone))))
-   `(company-scrollbar-bg ((t (:background ,surface))))
-   `(company-scrollbar-fg ((t (:background ,high))))
-   `(company-preview ((t (:foreground ,muted))))
-   `(company-preview-common ((t (:foreground ,drake :weight bold))))
-   `(company-preview-search ((t (:background ,med :foreground ,pageone))))
-
    ;; --- minibuffer completion UI ---------------------------------------
    `(vertico-current ((t (:background ,overlay :foreground ,drake :weight bold))))
    `(vertico-group-title ((t (:foreground ,faint :weight bold))))
@@ -443,10 +475,6 @@
    `(orderless-match-face-2 ((t (:foreground ,sasaki :weight bold))))
    `(orderless-match-face-3 ((t (:foreground ,blackmaria :weight bold))))
 
-   ;; --- term ------------------------------------------------------------
-   `(term-color-red ((t (:foreground ,whoswho))))
-   `(term-color-green ((t (:foreground ,sasaki))))
-   
    ;; --- vterm -----------------------------------------------------------
    `(vterm-color-black ((t (:foreground ,low :background ,low))))
    `(vterm-color-bright-black ((t (:foreground ,med :background ,med))))
@@ -455,9 +483,9 @@
    `(vterm-color-green ((t (:foreground ,sasaki :background ,sasaki))))
    `(vterm-color-bright-green ((t (:foreground ,triceratops :background ,triceratops))))
    `(vterm-color-yellow ((t (:foreground ,pageone :background ,pageone))))
-   `(vterm-color-bright-yellow ((t (:foreground ,spino :background ,spino))))
+   `(vterm-color-bright-yellow ((t (:foreground ,spinosaurus :background ,spinosaurus))))
    `(vterm-color-blue ((t (:foreground ,ulti :background ,ulti))))
-   `(vterm-color-bright-blue ((t (:foreground ,pachy :background ,pachy))))
+   `(vterm-color-bright-blue ((t (:foreground ,pachycephalos :background ,pachycephalos))))
    `(vterm-color-magenta ((t (:foreground ,drake :background ,drake))))
    `(vterm-color-bright-magenta ((t (:foreground ,allosaurus :background ,allosaurus))))
    `(vterm-color-cyan ((t (:foreground ,blackmaria :background ,blackmaria))))
@@ -473,4 +501,44 @@
                (file-name-as-directory (file-name-directory load-file-name))))
 
 (provide-theme 'ulti)
+
+;;; --- automated exports -------------------------------------------------
+
+(defun ulti/render-template (template-file output-file &optional strip-hash)
+  "Inject ulti/palette values into TEMPLATE-FILE and write to extras/OUTPUT-FILE.
+STRIP-HASH optionally removes # from templates that require bare rrggbb."
+  (with-temp-buffer
+    (insert-file-contents template-file)
+    (dolist (pair ulti/palette)
+      (goto-char (point-min))
+      (let ((value (if strip-hash (substring (cdr pair) 1) (cdr pair))))
+        (while (search-forward (format "{{%s}}" (car pair)) nil t)
+          (replace-match value t t))))
+    (make-directory (file-name-directory output-file) t)
+    (write-region (point-min) (point-max) output-file)
+    (message "ulti: wrote %s" output-file)))
+
+(defvar ulti/export-targets
+  '(("templates/palette.json" . "palette.json")
+    ("templates/ansi.json" . "extras/ansi/ulti.json")
+    ("templates/foot.ini" . "extras/foot/ulti.ini")
+    ("templates/mako" . "extras/mako/ulti")
+    ("templates/shell.sh" . "extras/shell/ulti.sh")
+    ("templates/termux.properties" . "extras/termux/ulti.properties")
+    ("templates/tty.conf" "extras/tty/ulti.conf" t)))
+
+(defun ulti/export-all ()
+  "Render every template in `ulti/export-targets' against `ulti/palette'.
+Callable interactively, or headless via:
+  `emacs --batch -l ulti-theme.el -f ulti/export-all`."
+  (interactive)
+  (dolist (entry ulti/export-targets)
+    (let ((template (if (consp (cdr entry)) (nth 0 entry) (car entry)))
+          (output    (if (consp (cdr entry)) (nth 1 entry) (cdr entry)))
+          (strip     (if (consp (cdr entry)) (nth 2 entry) nil)))
+      (ulti/render-template
+       (expand-file-name template ulti/theme-dir)
+       (expand-file-name output)
+       strip))))
+
 ;;; ulti-theme.el ends here

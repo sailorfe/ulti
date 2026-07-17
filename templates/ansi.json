@@ -1,0 +1,20 @@
+{
+    "background": "{{base}}",
+    "foreground": "{{text}}",
+    "black": "{{overlay}}",
+    "red": "{{whoswho}}",
+    "green": "{{sasaki}}",
+    "yellow": "{{pageone}}",
+    "blue": "{{ulti}}",
+    "magenta": "{{drake}}",
+    "cyan": "{{blackmaria}}",
+    "white": "{{text}}",
+    "brightBlack": "{{high}}",
+    "brightRed": "{{sabretooth}}",
+    "brightGreen": "{{triceratops}}",
+    "brightYellow": "{{spinosaurus}}",
+    "brightBlue": "{{pachycephalos}}",
+    "brightMagenta": "{{allosaurus}}",
+    "brightCyan": "{{rosamygale}}",
+    "brightWhite": "{{light}}"
+}

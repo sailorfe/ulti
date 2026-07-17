@@ -1,0 +1,20 @@
+#!/bin/sh
+export THEME_NAME=ulti
+export COLOR_BACKGROUND={{base}} 
+export COLOR_FOREGROUND={{text}} 
+export COLOR_BLACK={{overlay}}
+export COLOR_RED={{whoswho}}
+export COLOR_GREEN={{sasaki}}
+export COLOR_YELLOW={{pageone}}
+export COLOR_BLUE={{ulti}}
+export COLOR_MAGENTA={{drake}}
+export COLOR_CYAN={{blackmaria}}
+export COLOR_WHITE={{text}}
+export COLOR_BRIGHT_BLACK={{high}}
+export COLOR_BRIGHT_RED={{sabretooth}}
+export COLOR_BRIGHT_GREEN={{triceratops}}
+export COLOR_BRIGHT_YELLOW={{spinosaurus}}
+export COLOR_BRIGHT_BLUE={{pachycephalos}}
+export COLOR_BRIGHT_MAGENTA={{allosaurus}}
+export COLOR_BRIGHT_CYAN={{rosamygale}}
+export COLOR_BRIGHT_WHITE={{light}}
