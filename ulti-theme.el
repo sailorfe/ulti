@@ -22,7 +22,8 @@
          (append (color-hsl-to-rgb (/ h 360.0) s l) '(2))))
 
 (defun ulti/bright (h s l &optional delta)
-  "Raise L by DELTA (default 0.1) for a bright/terminal variant; leave H and S alone."
+  "Raise L by DELTA (default 0.1) for a bright/terminal variant;
+leave H and S alone."
   (ulti/hsl h s (min 1.0 (+ l (or delta 0.1)))))
 
 (defvar ulti/palette
