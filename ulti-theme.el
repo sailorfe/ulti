@@ -164,9 +164,9 @@ leave H and S alone."
    `(success ((t (:foreground ,sasaki :weight bold))))
 
    ;; --- mode-line / header / tab lines ---------------------------
-   `(mode-line ((t (:background ,overlay :foreground ,text))))
-   `(mode-line-inactive ((t (:background ,surface :foreground ,muted))))
-   `(mode-line-active ((t (:background ,overlay :foreground ,text))))
+   `(mode-line ((t (:background ,surface :foreground ,text))))
+   `(mode-line-inactive ((t (:background ,base :foreground ,muted))))
+   `(mode-line-active ((t (:background ,surface :foreground ,text))))
    `(mode-line-emphasis ((t (:foreground ,drake :weight bold))))
    `(mode-line-highlight ((t (:foreground ,drake :box (:line-width -1 :color ,drake)))))
    `(mode-line-buffer-id ((t (:foreground ,text :weight bold))))
