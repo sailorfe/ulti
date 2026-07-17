@@ -12,7 +12,7 @@ see also:
 
 ** installation with ~straight.el~
 
-~straight.el~ allows package management from source, not m/elpa tarballs, and easy local development from your ~straight/buld~ directory.
+~straight.el~ allows package management from source, not m/elpa tarballs, and easy local development from your ~straight/build~ directory.
 
 #+BEGIN_SRC lisp
 (use-package ulti
