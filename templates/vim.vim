@@ -17,7 +17,7 @@ endif
 hi Normal       guifg={{text}} guibg={{base}} ctermfg={{text-cterm}} ctermbg={{base-cterm}}
 hi NonText      guifg={{muted}} ctermfg={{muted-cterm}}
 hi EndOfBuffer  guifg={{muted}} ctermfg={{muted-cterm}}
-hi SpecialKey   guifg={{overlay}} ctermfg={{overlay-cterm}}
+hi SpecialKey   guifg={{blackmaria}} ctermfg={{blackmaria-cterm}}
 hi ColorColumn  guibg={{surface}} ctermbg={{surface-cterm}}
 hi Cursor       guifg={{base}} guibg={{light}} ctermfg={{base-cterm}} ctermbg={{light-cterm}}
 hi CursorLine   guibg={{overlay}} ctermbg={{overlay-cterm}} cterm=NONE gui=NONE
