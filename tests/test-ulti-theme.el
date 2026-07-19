@@ -14,3 +14,6 @@
           (insert-file-contents file)
           (goto-char (point-min))
           (should-not (re-search-forward "{{\\|}}" nil t)))))))
+
+(provide 'test-ulti-theme.el)
+;;; test-ulti-theme.el ends here
