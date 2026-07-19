@@ -332,6 +332,10 @@ leave H and S alone."
    `(flycheck-error-list-warning ((t (:foreground ,pageone :weight bold))))
    `(flycheck-error-list-info ((t (:foreground ,ulti))))
 
+   ;; --- jinkx monsoon ---------------------------------------------------
+   `(jinx-misspelled ((t (:foreground ,whoswho :underline (:style wave :color ,whoswho)))))
+   `(jinx-highlight ((t (:foreground ,base :background ,pageone))))
+
    ;; --- eldoc / help hints & tooltips -----------------------------------
    `(eldoc-highlight-function-argument ((t (:foreground ,drake :weight bold))))
    `(eldoc-box-body ((t (:background ,surface :foreground ,text))))
@@ -382,6 +386,7 @@ leave H and S alone."
    `(org-quote ((t (:foreground ,faint :slant italic))))
    `(org-macro ((t (:foreground ,pageone))))
    `(org-table ((t (:foreground ,drake))))
+   `(org-footnote ((t :foreground ,blackmaria :underline t)))
    ;; custom todo keywords
    `(sailorfe-org-todo-next ((t (:background ,drake :foreground ,low :weight bold))))
    `(sailorfe-org-todo-prog ((t (:background ,blackmaria :foreground ,low :weight bold))))
