@@ -17,7 +17,7 @@ endif
 hi Normal       guifg=#c7cbe4 guibg=#131629 ctermfg=252 ctermbg=234
 hi NonText      guifg=#515884 ctermfg=60
 hi EndOfBuffer  guifg=#515884 ctermfg=60
-hi SpecialKey   guifg=#202545 ctermfg=236
+hi SpecialKey   guifg=#84c9e0 ctermfg=116
 hi ColorColumn  guibg=#1a1e37 ctermbg=235
 hi Cursor       guifg=#131629 guibg=#e3e5f1 ctermfg=234 ctermbg=254
 hi CursorLine   guibg=#202545 ctermbg=236 cterm=NONE gui=NONE
