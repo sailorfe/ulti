@@ -200,33 +200,58 @@ leave H and S alone."
    `(show-paren-match-expression ((t (:background ,overlay))))
    `(show-paren-mismatch ((t (:background ,whoswho :foreground ,light :weight bold))))
 
+   ;; --- misc syntax ----------------------------------------------
+   ;; sh
+   `(sh-heredoc ((t (:foreground ,pageone :weight bold))))
+   `(sh-quoted-exec ((t :foreground ,whoswho :slant italic)))
+   `(sh-escaped-newline ((t :foreground ,faint)))
+
    ;; --- font-lock (syntax highlighting) -------------------------------
+   ;; comment
    `(font-lock-comment-face ((t (:foreground ,faint :slant italic))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,faint :slant italic))))
    `(font-lock-doc-face ((t (:foreground ,faint :slant italic))))
    `(font-lock-doc-markup-face ((t (:foreground ,faint))))
-   `(font-lock-string-face ((t (:foreground ,pageone))))
-   `(font-lock-keyword-face ((t (:foreground ,ulti :weight bold))))
-   `(font-lock-builtin-face ((t (:foreground ,blackmaria :weight bold :slant italic))))
-   `(font-lock-function-name-face ((t (:foreground ,drake))))
-   `(font-lock-function-call-face ((t (:foreground ,drake))))
-   `(font-lock-variable-name-face ((t (:foreground ,text :slant italic))))
-   `(font-lock-variable-use-face ((t (:foreground ,text))))
-   `(font-lock-type-face ((t (:foreground ,sasaki))))
+
+   ;; constant
    `(font-lock-constant-face ((t (:foreground ,pageone))))
-   `(font-lock-warning-face ((t (:foreground ,pageone :weight bold))))
-   `(font-lock-negation-char-face ((t (:foreground ,whoswho :weight bold))))
-   `(font-lock-preprocessor-face ((t (:foreground ,ulti))))
-   `(font-lock-regexp-grouping-backslash ((t (:foreground ,blackmaria :weight bold))))
-   `(font-lock-regexp-grouping-construct ((t (:foreground ,blackmaria :weight bold))))
+   `(font-lock-number-face ((t (:foreground ,pageone))))
+
+   ;; string
+   `(font-lock-string-face ((t (:foreground ,sasaki))))
+
+   ;; identifier
+   `(font-lock-variable-name-face ((t (:foreground ,blackmaria))))
+   `(font-lock-variable-use-face ((t (:foreground ,blackmaria))))
+
+   ;; function
+   `(font-lock-function-name-face ((t (:foreground ,ulti))))
+   `(font-lock-function-call-face ((t (:foreground ,ulti))))
+
+   ;; statement
+   `(font-lock-keyword-face ((t (:foreground ,drake :weight bold))))
+
+   ;; preproc
+   `(font-lock-preprocessor-face ((t (:foreground ,drake))))
+
+   ;; type
+   `(font-lock-type-face ((t (:foreground ,pageone))))
+
+   ;; special
+   `(font-lock-builtin-face ((t (:foreground ,ulti))))
+   `(font-lock-escape-face ((t (:foreground ,ulti))))
+   `(font-lock-regexp-grouping-backslash ((t (:foreground ,ulti :weight bold))))
+   `(font-lock-regexp-grouping-construct ((t (:foreground ,ulti :weight bold))))
+
+   ;; misc
+   `(font-lock-warning-face ((t (:foreground ,whoswho :weight bold))))
+   `(font-lock-negation-char-face ((t (:foreground ,ulti :weight bold))))
    `(font-lock-property-name-face ((t (:foreground ,text))))
    `(font-lock-property-use-face ((t (:foreground ,text))))
-   `(font-lock-number-face ((t (:foreground ,pageone))))
    `(font-lock-operator-face ((t (:foreground ,text))))
    `(font-lock-bracket-face ((t (:foreground ,text))))
-   `(font-lock-delimiter-face ((t (:foreground ,muted))))
    `(font-lock-punctuation-face ((t (:foreground ,text))))
-   `(font-lock-escape-face ((t (:foreground ,drake))))
+   `(font-lock-delimiter-face ((t (:foreground ,muted))))
 
    ;; --- diff-mode ------------------------------------------------
    `(diff-header ((t (:background ,surface))))
