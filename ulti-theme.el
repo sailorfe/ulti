@@ -513,6 +513,16 @@ leave H and S alone."
    `(orderless-match-face-2 ((t (:foreground ,sasaki :weight bold))))
    `(orderless-match-face-3 ((t (:foreground ,blackmaria :weight bold))))
 
+   ;; --- eww -------------------------------------------------------------
+   `(eww-form-file ((t (:foreground ,base :background ,faint :box nil))))
+   `(eww-form-submit ((t (:foreground ,base :background ,faint :box nil))))
+   `(eww-form-text ((t (:foreground ,base :background ,text :box nil))))
+   `(eww-form-select ((t (:foreground ,base :background ,blackmaria :box nil))))
+   `(eww-form-checkbox ((t (:foreground ,base :background ,blackmaria :box nil))))
+   `(eww-form-textarea ((t (:foreground ,base :background ,text :box nil))))
+   `(eww-invalid-certificate ((t :foreground ,whoswho :weight bold)))
+   `(eww-valid-certificate ((t :foreground ,sasaki :weight bold)))
+
    ;; --- vterm -----------------------------------------------------------
    `(vterm-color-black ((t (:foreground ,low :background ,low))))
    `(vterm-color-bright-black ((t (:foreground ,med :background ,med))))
