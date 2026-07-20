@@ -548,6 +548,15 @@ leave H and S alone."
    `(eww-invalid-certificate ((t :foreground ,whoswho :weight bold)))
    `(eww-valid-certificate ((t :foreground ,sasaki :weight bold)))
 
+   ;; --- dashboard -------------------------------------------------------
+   `(dashboard-heading ((t (:foreground ,ulti :weight bold))))
+   `(dashboard-navigator ((t (:foreground ,blackmaria :weight bold))))
+   `(dashboard-items-face ((t (:foreground ,blackmaria :weight bold))))
+   `(dashboard-no-items-face ((t (:foreground ,muted :weight bold))))
+   `(dashboard-footer-face ((t (:foreground ,faint :slant italic))))
+   `(dashboard-text-banner ((t (:foreground ,ulti))))
+   `(dashboard-banner-logo-title ((t (:foreground ,text))))
+   
    ;; --- vterm -----------------------------------------------------------
    `(vterm-color-black ((t (:foreground ,low :background ,low))))
    `(vterm-color-bright-black ((t (:foreground ,med :background ,med))))
