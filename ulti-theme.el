@@ -65,8 +65,8 @@ leave H and S alone."
          (sabretooth (ulti/bright 2   0.58 0.6))
          (sasaki (ulti/hsl 62  0.5  0.58)) ; pachycephalos green, ANSI green
          (triceratops (ulti/bright 62  0.5  0.58))
-         (pageone (ulti/hsl 258 0.52 0.72)) ; page one purple, ANSI "yellow"
-         (spinosaurus (ulti/bright 258 0.52 0.72))
+         (pageone (ulti/hsl 258 0.72 0.64)) ; page one purple, ANSI "yellow"
+         (spinosaurus (ulti/bright 258 0.72 0.64))
          (ulti (ulti/hsl 330 0.81 0.74)) ; pink hair, ANSI "blue"
          (pachycephalos (ulti/bright 330 0.81 0.74))
          (drake (ulti/hsl 215 0.74 0.62)) ; blue hair, ANSI "magenta"
@@ -238,7 +238,7 @@ leave H and S alone."
    `(font-lock-type-face ((t (:foreground ,pageone))))
 
    ;; special
-   `(font-lock-builtin-face ((t (:foreground ,ulti))))
+   `(font-lock-builtin-face ((t (:foreground ,ulti :weight bold))))
    `(font-lock-escape-face ((t (:foreground ,ulti))))
    `(font-lock-regexp-grouping-backslash ((t (:foreground ,ulti :weight bold))))
    `(font-lock-regexp-grouping-construct ((t (:foreground ,ulti :weight bold))))

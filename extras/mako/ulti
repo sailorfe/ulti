@@ -3,7 +3,7 @@ text-color=#c7cbe4
 progress-color=over #2e324b
 
 [urgency=normal]
-border-color=#a892dc
+border-color=#8861e5
 
 [urgency=low]
 border-color=#f286bc
