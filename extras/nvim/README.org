@@ -1,5 +1,15 @@
 * ulti.lua
 
+** supported plugins
+
++ [[https://github.com/folke/trouble.nvim][trouble.nvim]]
++ [[https://github.com/nvim-mini/mini.nvim][mini.nvim]] diff, statusline, tabline
++ [[https://github.com/lukas-reineke/indent-blankline.nvim][indent-blankline.nvim]]
++ [[https://github.com/lewis6991/gitsigns.nvim][gitsigns.nvim]]
++ [[https://github.com/MeanderingProgrammer/render-markdown.nvim][render-markdown.nvim]]
+
+** installation
+
 i symlink =extras/nvim= into my =packpath= as =ulti= so what neovim sees is a =lua/ulti.lua=.
 
 #+BEGIN_SRC sh
@@ -14,7 +24,7 @@ require("ulti").setup()
 
 with a plugin manager that clones the whole repository, you'll have to specify the subdirectory.
 
-** lazy.nvim
+*** lazy.nvim
 
 #+BEGIN_SRC lua
 {  
@@ -26,7 +36,7 @@ with a plugin manager that clones the whole repository, you'll have to specify t
 }
 #+END_SRC
 
-** packer.nvim
+*** packer.nvim
 
 #+BEGIN_SRC lua
 { use 'https://codeberg.org/sailorfe/ulti', rtp = 'extras/nvim' }
