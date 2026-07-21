@@ -1,0 +1,33 @@
+* ulti.lua
+
+i symlink =extras/nvim= into my =packpath= as =ulti= so what neovim sees is a =lua/ulti.lua=.
+
+#+BEGIN_SRC sh
+ln -s ulti/extras/nvim .local/share/nvim/site/pack/plugin/start/ulti
+#+END_SRC
+
+then configure it in =init.lua= as
+
+#+BEGIN_SRC lua
+require("ulti").setup()
+#+END_SRC
+
+with a plugin manager that clones the whole repository, you'll have to specify the subdirectory.
+
+** lazy.nvim
+
+#+BEGIN_SRC lua
+{  
+  "https://codeberg.org/sailorfe/ulti",
+  name = "ulti",  
+  config = function(plugin)  
+    vim.opt.rtp:append(plugin.dir .. "/extras/nvim")  
+  end,  
+}
+#+END_SRC
+
+** packer.nvim
+
+#+BEGIN_SRC lua
+{ use 'https://codeberg.org/sailorfe/ulti', rtp = 'extras/nvim' }
+#+END_SRC

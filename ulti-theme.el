@@ -605,6 +605,7 @@ STRIP-HASH optionally removes # from templates that require bare rrggbb."
     ("templates/ansi.json" . "extras/ansi/ulti.json")
     ("templates/foot.ini" "extras/foot/ulti.ini" t)
     ("templates/mako" . "extras/mako/ulti")
+    ("templates/nvim.lua" . "extras/nvim/lua/ulti.lua")
     ("templates/shell.sh" . "extras/shell/ulti.sh")
     ("templates/termux.properties" . "extras/termux/ulti.properties")
     ("templates/tty.conf" "extras/tty/ulti.conf" t)
