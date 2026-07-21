@@ -217,6 +217,9 @@ leave H and S alone."
    `(font-lock-constant-face ((t (:foreground ,pageone))))
    `(font-lock-number-face ((t (:foreground ,pageone))))
 
+   ;; type
+   `(font-lock-type-face ((t (:foreground ,pageone))))
+
    ;; string
    `(font-lock-string-face ((t (:foreground ,sasaki))))
 
@@ -234,14 +237,11 @@ leave H and S alone."
    ;; preproc
    `(font-lock-preprocessor-face ((t (:foreground ,drake))))
 
-   ;; type
-   `(font-lock-type-face ((t (:foreground ,pageone))))
-
    ;; special
-   `(font-lock-builtin-face ((t (:foreground ,ulti :weight bold))))
-   `(font-lock-escape-face ((t (:foreground ,ulti))))
-   `(font-lock-regexp-grouping-backslash ((t (:foreground ,ulti :weight bold))))
-   `(font-lock-regexp-grouping-construct ((t (:foreground ,ulti :weight bold))))
+   `(font-lock-builtin-face ((t (:foreground ,drake :weight bold))))
+   `(font-lock-escape-face ((t (:foreground ,muted))))
+   `(font-lock-regexp-grouping-backslash ((t (:foreground ,muted :weight bold))))
+   `(font-lock-regexp-grouping-construct ((t (:foreground ,muted :weight bold))))
 
    ;; misc
    `(font-lock-warning-face ((t (:foreground ,whoswho :weight bold))))
