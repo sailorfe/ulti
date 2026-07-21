@@ -1,20 +1,36 @@
 * ulti.lua
 
-i symlink =extras/nvim= into my =packpath= as =ulti= so what neovim sees is a =lua/ulti.lua=.
+** supported plugins
+
++ [[https://github.com/folke/trouble.nvim][trouble.nvim]]
++ [[https://github.com/nvim-mini/mini.nvim][mini.nvim]] diff, statusline, tabline
++ [[https://github.com/lukas-reineke/indent-blankline.nvim][indent-blankline.nvim]]
++ [[https://github.com/lewis6991/gitsigns.nvim][gitsigns.nvim]]
++ [[https://github.com/MeanderingProgrammer/render-markdown.nvim][render-markdown.nvim]]
+
+** installation
+
+since this port is a subdirectory, you'll have to point neovim here so it can find =lua/ulti.lua=. without a package manager:
 
 #+BEGIN_SRC sh
-ln -s ulti/extras/nvim .local/share/nvim/site/pack/plugin/start/ulti
+  # as submodule in version-controlled dotfiles
+  git submodule add https://codeberg.org/sailorfe/ulti pack/plugins/start
+  # or 
+  git clone https://codeberg.org/sailorfe/ulti .local/share/nvim/site/pack/plugins/start
 #+END_SRC
 
-then configure it in =init.lua= as
+then add =extras/nvim= to your =packpath=.
 
 #+BEGIN_SRC lua
+local ulti_path = vim.fn.stdpath("data") .. "/site/pack/plugins/start/ulti/extras/nvim"
+
+vim.opt.rtp:append(ulti_path)
+package.path = package.path .. ";" .. ulti_path .. "/lua/?.lua;" .. ulti_path .. "/lua/?/init.lua"
+
 require("ulti").setup()
 #+END_SRC
 
-with a plugin manager that clones the whole repository, you'll have to specify the subdirectory.
-
-** lazy.nvim
+*** lazy.nvim
 
 #+BEGIN_SRC lua
 {  
@@ -26,7 +42,7 @@ with a plugin manager that clones the whole repository, you'll have to specify t
 }
 #+END_SRC
 
-** packer.nvim
+*** packer.nvim
 
 #+BEGIN_SRC lua
 { use 'https://codeberg.org/sailorfe/ulti', rtp = 'extras/nvim' }

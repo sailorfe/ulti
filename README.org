@@ -27,7 +27,7 @@ see also:
 
 + [[https://codeberg.org/dnkl/foot][foot]]
 + [[https://github.com/emersion/mako][mako]]
-+ [[https://neovim.io][nvim]]
++ [[https://neovim.io][nvim 0.11]]
 + shell
 + [[https://termux.dev][termux]]
 + tty
