@@ -608,7 +608,8 @@ STRIP-HASH optionally removes # from templates that require bare rrggbb."
     ("templates/shell.sh" . "extras/shell/ulti.sh")
     ("templates/termux.properties" . "extras/termux/ulti.properties")
     ("templates/tty.conf" "extras/tty/ulti.conf" t)
-    ("templates/vim.vim" "extras/vim/colors/ulti.vim")))
+    ("templates/vim.vim" "extras/vim/colors/ulti.vim")
+    ("templates/X11.Xresources" "extras/X11/ulti.Xresources")))
 
 (defun ulti/export-all ()
   "Render every template in `ulti/export-targets' against `ulti/palette'.

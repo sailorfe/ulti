@@ -1,0 +1,22 @@
+! ulti colors for Xresources
+
+*background: #131629
+*foreground: #c7cbe4
+
+*color0: #2e324b
+*color1: #d4615d
+*color2: #c5c95e
+*color3: #8861e5
+*color4: #f286bc
+*color5: #5692e5
+*color6: #84c9e0
+*color7: #c7cbe4
+
+*color8: #3e4365
+*color9: #de8986
+*color10: #d3d684
+*color11: #a98cec
+*color12: #f7b5d6
+*color13: #82aeec
+*color14: #addbea
+*color15: #e3e5f1

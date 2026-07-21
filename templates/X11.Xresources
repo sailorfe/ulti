@@ -1,0 +1,22 @@
+! ulti colors for Xresources
+
+*background: {{base}}
+*foreground: {{text}}
+
+*color0: {{med}}
+*color1: {{whoswho}}
+*color2: {{sasaki}}
+*color3: {{pageone}}
+*color4: {{ulti}}
+*color5: {{drake}}
+*color6: {{blackmaria}}
+*color7: {{text}}
+
+*color8: {{high}}
+*color9: {{sabretooth}}
+*color10: {{triceratops}}
+*color11: {{spinosaurus}}
+*color12: {{pachycephalos}}
+*color13: {{allosaurus}}
+*color14: {{rosamygale}}
+*color15: {{light}}
