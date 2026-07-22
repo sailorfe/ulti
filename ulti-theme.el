@@ -412,6 +412,7 @@ leave H and S alone."
    `(org-macro ((t (:foreground ,pageone))))
    `(org-table ((t (:foreground ,drake))))
    `(org-footnote ((t :foreground ,blackmaria :underline t)))
+   `(org-special-keyword ((t :foreground ,blackmaria)))
    ;; custom todo keywords
    `(sailorfe-org-todo-next ((t (:background ,drake :foreground ,low :weight bold))))
    `(sailorfe-org-todo-prog ((t (:background ,blackmaria :foreground ,low :weight bold))))
