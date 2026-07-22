@@ -33,12 +33,12 @@ require("ulti").setup()
 *** lazy.nvim
 
 #+BEGIN_SRC lua
-{  
+{
   "https://codeberg.org/sailorfe/ulti",
-  name = "ulti",  
-  config = function(plugin)  
-    vim.opt.rtp:append(plugin.dir .. "/extras/nvim")  
-  end,  
+  name = "ulti",
+  config = function(plugin)
+    vim.opt.rtp:append(plugin.dir .. "/extras/nvim")
+  end,
 }
 #+END_SRC
 
