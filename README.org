@@ -10,18 +10,37 @@ see also:
 + [[https://codeberg.org/sailorfe/moonqueen.nvim][moonqueen.nvim]]
 + [[https://codeberg.org/sailorfe/luna.nvim][luna.nvim]]
 
-** installation with ~straight.el~
+** installation
 
-~straight.el~ allows package management from source, not m/elpa tarballs, and easy local development from your ~straight/build~ directory.
+*** =straight.el=
 
 #+BEGIN_SRC lisp
-(use-package ulti
-  :straight (ulti
-             :type git
-             :repo "https://codeberg.org/sailorfe/ulti")
-  :config
-  (add-to-list 'custom-theme-load-path (straight--build-dir "ulti")))
+  (straight-use-package
+   '(ulti
+     :type git
+     :host codeberg
+     :repo "sailorfe/ulti"))
+
+  (add-to-list 'custom-theme-load-path (straight--build-dir "ulti"))
 #+END_SRC
+
+or
+
+#+begin_src lisp
+  (use-package ulti
+      :straight(:host codeberg :repo "sailorfe/ulti")
+      :config
+      (add-to-list 'custom-theme-load-path (straight--build-dir "ulti")))
+#+end_src
+
+*** =package.el=
+
+#+begin_src lisp
+  (use-package ulti
+      :vc (:url "https://codeberg.org/sailorfe/ulti")
+      :ensure t
+      :config (load-theme 'ulti t))
+#+end_src
 
 ** extras
 
