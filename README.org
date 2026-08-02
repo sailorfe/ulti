@@ -10,23 +10,43 @@ see also:
 + [[https://codeberg.org/sailorfe/moonqueen.nvim][moonqueen.nvim]]
 + [[https://codeberg.org/sailorfe/luna.nvim][luna.nvim]]
 
-** installation with ~straight.el~
+** installation
 
-~straight.el~ allows package management from source, not m/elpa tarballs, and easy local development from your ~straight/build~ directory.
+*** =straight.el=
 
 #+BEGIN_SRC lisp
-(use-package ulti
-  :straight (ulti
-             :type git
-             :repo "https://codeberg.org/sailorfe/ulti")
-  :config
-  (add-to-list 'custom-theme-load-path (straight--build-dir "ulti")))
+  (straight-use-package
+   '(ulti
+     :type git
+     :host codeberg
+     :repo "sailorfe/ulti"))
+
+  (add-to-list 'custom-theme-load-path (straight--build-dir "ulti"))
 #+END_SRC
+
+or
+
+#+begin_src lisp
+  (use-package ulti
+      :straight(:host codeberg :repo "sailorfe/ulti")
+      :config
+      (add-to-list 'custom-theme-load-path (straight--build-dir "ulti")))
+#+end_src
+
+*** =package.el=
+
+#+begin_src lisp
+  (use-package ulti
+      :vc (:url "https://codeberg.org/sailorfe/ulti")
+      :ensure t
+      :config (load-theme 'ulti t))
+#+end_src
 
 ** extras
 
 + [[https://codeberg.org/dnkl/foot][foot]]
 + [[https://github.com/emersion/mako][mako]]
++ [[https://neovim.io][nvim 0.11]]
 + shell
 + [[https://termux.dev][termux]]
 + tty
@@ -38,9 +58,6 @@ external ports are automatically generated from templates using ~{{ variable }}~
 2. edit ~ulti/export-targets~ at the bottom of [[file:ulti-theme.el][ulti-theme.el]] to include a list like ~("templates/INPUT-FILE" . "extras/$APP/OUTPUT-FILE").~
 3. run [[file:scripts/build][./scripts/build]] and [[file:scripts/test][./scripts/test]]. test your build directly in the target application and repeat as needed.
 4. make a pull request committing your *template file*, *ulti-theme.el* and *your new extra* with a commit message like ~feat(extra): add $APP~.
-
-*** wishlist
-- [ ] neovim
 
 ** license
 

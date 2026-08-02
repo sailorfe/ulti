@@ -217,6 +217,9 @@ leave H and S alone."
    `(font-lock-constant-face ((t (:foreground ,pageone))))
    `(font-lock-number-face ((t (:foreground ,pageone))))
 
+   ;; type
+   `(font-lock-type-face ((t (:foreground ,pageone))))
+
    ;; string
    `(font-lock-string-face ((t (:foreground ,sasaki))))
 
@@ -234,14 +237,11 @@ leave H and S alone."
    ;; preproc
    `(font-lock-preprocessor-face ((t (:foreground ,drake))))
 
-   ;; type
-   `(font-lock-type-face ((t (:foreground ,pageone))))
-
    ;; special
-   `(font-lock-builtin-face ((t (:foreground ,ulti :weight bold))))
-   `(font-lock-escape-face ((t (:foreground ,ulti))))
-   `(font-lock-regexp-grouping-backslash ((t (:foreground ,ulti :weight bold))))
-   `(font-lock-regexp-grouping-construct ((t (:foreground ,ulti :weight bold))))
+   `(font-lock-builtin-face ((t (:foreground ,drake :weight bold))))
+   `(font-lock-escape-face ((t (:foreground ,muted))))
+   `(font-lock-regexp-grouping-backslash ((t (:foreground ,muted :weight bold))))
+   `(font-lock-regexp-grouping-construct ((t (:foreground ,muted :weight bold))))
 
    ;; misc
    `(font-lock-warning-face ((t (:foreground ,whoswho :weight bold))))
@@ -412,6 +412,7 @@ leave H and S alone."
    `(org-macro ((t (:foreground ,pageone))))
    `(org-table ((t (:foreground ,drake))))
    `(org-footnote ((t :foreground ,blackmaria :underline t)))
+   `(org-special-keyword ((t :foreground ,blackmaria)))
    ;; custom todo keywords
    `(sailorfe-org-todo-next ((t (:background ,drake :foreground ,low :weight bold))))
    `(sailorfe-org-todo-prog ((t (:background ,blackmaria :foreground ,low :weight bold))))
@@ -605,6 +606,7 @@ STRIP-HASH optionally removes # from templates that require bare rrggbb."
     ("templates/ansi.json" . "extras/ansi/ulti.json")
     ("templates/foot.ini" "extras/foot/ulti.ini" t)
     ("templates/mako" . "extras/mako/ulti")
+    ("templates/nvim.lua" . "extras/nvim/lua/ulti.lua")
     ("templates/shell.sh" . "extras/shell/ulti.sh")
     ("templates/termux.properties" . "extras/termux/ulti.properties")
     ("templates/tty.conf" "extras/tty/ulti.conf" t)
