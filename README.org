@@ -3,7 +3,7 @@
 [[file:grim.png]]
 
 #+begin_quote
-*mirrored to github from [[https://codeberg.org/sailorfe][codeberg]].* github and PRs and issues will be ignored. 
+*mirrored to github from [[https://codeberg.org/sailorfe][codeberg]].* issues and PRs opened on github will be ignored. 
 #+end_quote
 
 an emacs theme with automated ports written in pure emacs lisp, inspired by the tobiroppo from /one piece/. currently supports [[https://orgmode.org][org-mode]], [[https://github.com/jrblevin/markdown-mode][markdown-mode]], [[https://magit.vc/][magit]], [[https://github.com/minad/corfu][corfu]], and [[https://github.com/akermu/emacs-libvterm][vterm]]. 
