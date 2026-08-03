@@ -2,62 +2,76 @@
 
 [[file:grim.png]]
 
-#+begin_quote
-*mirrored to github from [[https://codeberg.org/sailorfe][codeberg]].* issues and PRs opened on github will be ignored. 
-#+end_quote
-
-an emacs theme with automated ports written in pure emacs lisp, inspired by the tobiroppo from /one piece/. currently supports [[https://orgmode.org][org-mode]], [[https://github.com/jrblevin/markdown-mode][markdown-mode]], [[https://magit.vc/][magit]], [[https://github.com/minad/corfu][corfu]], and [[https://github.com/akermu/emacs-libvterm][vterm]]. 
-
-see also:
-
-+ [[https://codeberg.org/sailorfe/perona.nvim][perona.nvim]]
-+ [[https://codeberg.org/sailorfe/moonqueen.nvim][moonqueen.nvim]]
-+ [[https://codeberg.org/sailorfe/luna.nvim][luna.nvim]]
+an emacs theme with automated ports written in pure emacs lisp, inspired by the tobiroppo from /one piece/. currently supports [[https://orgmode.org][org-mode]], [[https://github.com/jrblevin/markdown-mode][markdown-mode]], [[https://magit.vc/][magit]], [[https://github.com/minad/corfu][corfu]], and [[https://github.com/akermu/emacs-libvterm][vterm]].
 
 ** installation
 
 *** =straight.el=
 
-#+BEGIN_SRC lisp
-  (straight-use-package
-   '(ulti
-     :type git
-     :host codeberg
-     :repo "sailorfe/ulti"))
+if you have =(straight-use-package-by-default)= set:
 
-  (add-to-list 'custom-theme-load-path (straight--build-dir "ulti"))
-#+END_SRC
+#+begin_src lisp
+(use-package ulti
+    :straight(:host codeberg :repo "sailorfe/ulti")
+    :init
+    (load-theme 'ulti t)
+#+end_src
 
 or
 
 #+begin_src lisp
-  (use-package ulti
-      :straight(:host codeberg :repo "sailorfe/ulti")
-      :config
-      (add-to-list 'custom-theme-load-path (straight--build-dir "ulti")))
+(straight-use-package
+'(ulti
+    :type git
+    :host codeberg
+    :repo "sailorfe/ulti"))
+
+(add-to-list 'custom-theme-load-path (straight--build-dir "ulti"))
+
+(load-theme 'ulti t)
 #+end_src
 
 *** =package.el=
 
 #+begin_src lisp
-  (use-package ulti
-      :vc (:url "https://codeberg.org/sailorfe/ulti")
-      :ensure t
-      :config (load-theme 'ulti t))
+(use-package ulti
+    :vc (:url "https://codeberg.org/sailorfe/ulti")
+    :ensure t
+    :config (load-theme 'ulti t))
 #+end_src
 
 ** extras
 
 + [[https://codeberg.org/dnkl/foot][foot]]
 + [[https://github.com/emersion/mako][mako]]
-+ [[https://neovim.io][nvim 0.11]]
++ [[https://neovim.io][nvim]] 0.11
 + shell
 + [[https://termux.dev][termux]]
 + tty
-+ [[https://vim-classic.org/][vim classic]] and [[https://vim.org][vim 8+]]
++ [[https://vim-classic.org/][vim classic]] (vim 8)
 + [[https://invisible-island.net/xterm/xterm.html][xterm]]
++ [[https://pwmt.org/projects/zathura/][zathura]]
 
-external ports are automatically generated from templates using ={{variable}}= placeholders for keys that can be found in [[file:palette.json][palette.json]]. to contribute:
+** contributing
+
+#+begin_quote
+*this repo is mirrored to github from [[https://codeberg.org/sailorfe][codeberg]].* issues and PRs opened on github will be ignored.
+#+end_quote
+
+*** wishlist
+
+essentially dogfood coverage for packages and ports i do not use daily:
+
+- [ ] *magit*. i've only painted the most obvious faces.
+- [ ] *nvim* (0.12) as i haven't updated my installations since 0.11 (clearly).
+
+*** adding emacs packages
+
+if you've extended ulti with additional faces, especially for external packages, append them to [[file:ulti-theme.el][ulti-theme.el]] inside the =custom-theme-set-faces= list and open a pull request.
+
+*** adding extras
+
+external ports are automatically generated from templates using ={{variable}}= placeholders for keys that can be found in [[file:palette.json][palette.json]].
 
 1. add a file to =templates/=.
 2. edit =ulti/export-targets= at the bottom of [[file:ulti-theme.el][ulti-theme.el]] to include a list like =("templates/INPUT-FILE" . "extras/$APP/OUTPUT-FILE")=.
