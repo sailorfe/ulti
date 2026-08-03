@@ -26,6 +26,13 @@
 leave H and S alone."
   (ulti/hsl h s (min 1.0 (+ l (or delta 0.1)))))
 
+(defun ulti/rgb (hex)
+  "Convert HEX color to a comma-separated RGB string: \"r, g, b\"."
+  (let* ((r (string-to-number (substring hex 1 3) 16))
+         (g (string-to-number (substring hex 3 5) 16))
+         (b (string-to-number (substring hex 5 7) 16)))
+    (format "%d, %d, %d" r g b)))
+
 (defun ulti/nearest-256 (hex)
   "Return the nearest xterm-256 color index for HEX."
   (let* ((r (string-to-number (substring hex 1 3) 16))
@@ -54,13 +61,19 @@ leave H and S alone."
     (number-to-string (if (<= cube-dist gray-dist) cube-idx (+ 232 gray-idx)))))
 
 (defvar ulti/palette
-  (let* ((base (ulti/hsl 232 0.36 0.12))
+  (let* (
+         ;; backgrounds
+         (base (ulti/hsl 232 0.36 0.12))
          (surface (ulti/hsl 232 0.36 0.16))
          (overlay (ulti/hsl 232 0.36 0.2))
+
+         ;; foregrounds
          (muted (ulti/hsl 232 0.24 0.42))
          (faint (ulti/hsl 232 0.24 0.68))
          (text (ulti/hsl 232 0.36 0.84))
          (light (ulti/hsl 232 0.36 0.92))
+
+         ;; accents
          (whoswho (ulti/hsl 2   0.58 0.6))  ; red pumps, ANSI red
          (sabretooth (ulti/bright 2   0.58 0.6))
          (sasaki (ulti/hsl 62  0.5  0.58)) ; pachycephalos green, ANSI green
@@ -73,9 +86,15 @@ leave H and S alone."
          (allosaurus (ulti/bright 215 0.74 0.62))
          (blackmaria (ulti/hsl 195 0.6  0.7))  ; skirt, ANSI "cyan"
          (rosamygale (ulti/bright 195 0.6  0.7))
+
+         ;; contrast
          (low (ulti/hsl 232 0.24 0.16))
          (med (ulti/hsl 232 0.24 0.24))
          (high (ulti/hsl 232 0.24 0.32))
+
+         ;; just for zathura
+         (ulti-rgb (ulti/rgb ulti))
+         (pachycephalos-rgb (ulti/rgb ulti))
 
          (raw
           `((base . ,base)
@@ -100,6 +119,8 @@ leave H and S alone."
             (low . ,low)
             (med . ,med)
             (high . ,high)
+            (ulti-rgb . ,ulti-rgb)
+            (pachycephalos-rgb . ,pachycephalos-rgb)
             )))
     (append raw
             (mapcar (lambda (p)
@@ -611,7 +632,9 @@ STRIP-HASH optionally removes # from templates that require bare rrggbb."
     ("templates/termux.properties" . "extras/termux/ulti.properties")
     ("templates/tty.conf" "extras/tty/ulti.conf" t)
     ("templates/vim.vim" "extras/vim/colors/ulti.vim")
-    ("templates/X11.Xresources" "extras/X11/ulti.Xresources")))
+    ("templates/X11.Xresources" "extras/X11/ulti.Xresources")
+    ("templates/zathura" "extras/zathura/ulti")
+    ))
 
 (defun ulti/export-all ()
   "Render every template in `ulti/export-targets' against `ulti/palette'.
